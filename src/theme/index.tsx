@@ -1,30 +1,41 @@
-import {
-  createTheme,
-  PaletteColorOptions,
-  PaletteColor,
-  Color,
-} from '@mui/material'
-type ColorPartial = Partial<Color>
-declare module '@mui/material/styles' {
-  interface ButtonVariants {
-    outlined: React.CSSProperties
-    contained: React.CSSProperties
-  }
-
-  // allow configuration using `createTheme`
-  interface ButtonVariantsOptions {
-    outlined?: React.CSSProperties
-    contained?: React.CSSProperties
-  }
-}
-
+import { createTheme, Color } from '@mui/material'
 declare module '@mui/material/Button' {
   interface ButtonPropsVariantOverrides {
-    outlined: true
-    contained: true
+    template: true
+    createTemplate: true
   }
 }
 
-let theme = createTheme({})
+let theme = createTheme({
+  palette: {
+    primary: {
+      main: '#2da6ca',
+    },
+  },
+  components: {
+    MuiButton: {
+      variants: [
+        {
+          props: { variant: 'template' },
+          style: {
+            textTransform: 'none',
+            border: `4px solid`,
+            borderRadius: '24px',
+            color: '#2da6ca',
+          },
+        },
+        {
+          props: { variant: 'createTemplate' },
+          style: {
+            textTransform: 'none',
+            borderRadius: '24px',
+            backgroundColor: '#2da6ca',
+            color: '#fff',
+          },
+        },
+      ],
+    },
+  },
+})
 
 export default theme

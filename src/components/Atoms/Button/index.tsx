@@ -5,10 +5,7 @@ import {
   styled,
 } from '@mui/material'
 interface iProps extends MuiButtonProps {}
-const CustomizedButton = styled(MuiButton)(() => ({
-  borderRadius: '24px',
-  border: '4px solid ',
-}))
+const CustomizedButton = styled(MuiButton)(() => ({}))
 const CutomButton: React.FC<iProps> = (props) => {
   const { children } = props
   return (
