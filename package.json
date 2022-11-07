@@ -4,9 +4,11 @@
   "description": "Orion Application",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve --config webpack/webpack.config.js --open",
-    "build": "webpack .",
-    "test": "test"
+    "start": "webpack serve --config webpack/webpack.config.js",
+    "test": "jest -c jest.config.ts --passWithNoTests --coverage",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "chromatic": "npx chromatic --project-token=bdc2f5a6c7b2 --auto-accept-changes"
   },
   "author": "",
   "license": "ISC",
