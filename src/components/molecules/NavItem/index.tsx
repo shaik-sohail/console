@@ -2,7 +2,22 @@ import React from 'react'
 import { Box, Typography } from '@mui/material'
 import theme from '../../../theme/theme'
 import Icon from '../../Atoms/Icon'
+import { ICONS } from '../../../utils/Constants'
 
+const styleMap = {
+  outerBoxStyle: {
+    width: '100%',
+    alignItems: 'center',
+    height: '50px',
+    cursor: 'pointer',
+    '&:hover': {
+      backgroundColor: 'white',
+      '.MuiSvgIcon-root': {
+        color: 'black',
+      },
+    },
+  },
+}
 interface InputProps {
   iconName: string
   text: string
@@ -17,24 +32,17 @@ const NavItem = ({ iconName, text, onNavItemClick, active }: InputProps) => {
       }}
       display="flex"
       sx={{
-        width: '100%',
-        alignItems: 'center',
-        backgroundColor: !active ? theme.palette.primary.main : 'white',
-        height: '50px',
-        cursor: 'pointer',
-        '&:hover': {
-          backgroundColor: 'white',
-          '.MuiSvgIcon-root': {
-            color: 'black',
-          },
-        },
+        ...styleMap.outerBoxStyle,
+        backgroundColor: !active
+          ? theme.palette.primary.main
+          : theme.palette.secondary.main,
       }}
     >
       <Box sx={{ pl: '9px' }}>
         <Icon
-          name={iconName}
+          icon={ICONS[iconName]}
           fontSize="small"
-          sx={{ color: !active ? 'white' : 'black' }}
+          sx={{ color: !active ? theme.palette.secondary.main : 'none' }}
         />
       </Box>
       <Box sx={{ pl: '12px' }}>

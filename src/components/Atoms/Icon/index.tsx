@@ -1,25 +1,13 @@
-import React from 'react';
-import { SvgIcon } from '@mui/material';
-import { ICONS } from '../../../utils/Constants';
+import React from 'react'
+import { SvgIcon } from '@mui/material'
 
 export interface IconPropsType {
-    name:
-      | 'home'
-      | 'clientManagement'
-      | 'configurations'
-      | 'accessManagement'
-      | 'orchesstration'
-      | 'riskCaseManagement'
-      | 'reports';
-    [key: string]: unknown;
-  }
+  icon:JSX.Element;
+  [key: string]: unknown
+}
 
-const Icon = ({ name, ...props }: IconPropsType) => {
-  return (
-    <SvgIcon {...props}>
-      {ICONS[name]}
-    </SvgIcon>
-  );
-};
+const Icon = ({ icon, ...props }: IconPropsType) => {
+  return <SvgIcon {...props}>{icon}</SvgIcon>
+}
 
-export default Icon;
+export default Icon

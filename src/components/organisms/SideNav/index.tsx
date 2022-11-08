@@ -5,30 +5,33 @@ import theme from '../../../theme/theme'
 import { NavLink } from 'react-router-dom'
 import { NAV_ITEMS } from '../../../utils/Constants'
 
+const styleMap = {
+  outerBoxStyle: {
+    height: '100vh',
+    maxWidth: '260px',
+    backgroundColor: theme.palette.primary.main,
+  },
+  headerBoxStyle: {
+    borderBottom: `1px solid ${theme.palette.secondary.main}`,
+    height: '100px',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: theme.palette.secondary.main,
+  },
+}
+
 const SideNav = () => {
-  const [currentPage, setcurrentPage] = useState('')
+  const [currentPage, setCurrentPage] = useState('')
   const onNavItemClick = (value: string) => {
-    setcurrentPage(window.location.pathname.split('/')[1])
+    setCurrentPage(window.location.pathname.split('/')[1])
   }
 
   return (
-    <Box
-      sx={{
-        height: '100vh',
-        maxWidth: '260px',
-        backgroundColor: theme.palette.primary.main,
-      }}
-    >
+    <Box sx={{ ...styleMap.outerBoxStyle }}>
       <Box
         display="flex"
         alignItems="center"
-        sx={{
-          borderBottom: '1px solid white',
-          height: '100px',
-          alignItems: 'center',
-          justifyContent: 'center',
-          color: 'white',
-        }}
+        sx={{ ...styleMap.headerBoxStyle }}
       >
         <Typography variant="h4">TruValidate</Typography>
       </Box>
@@ -36,7 +39,7 @@ const SideNav = () => {
         {NAV_ITEMS.map((item) => {
           return (
             <NavLink
-              to={item.icon}
+              to={item.route}
               style={{ textDecoration: 'none', color: 'black' }}
             >
               <NavItem
