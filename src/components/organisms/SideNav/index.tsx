@@ -5,7 +5,6 @@ import theme from '../../../theme/theme'
 import { NAV_ITEMS } from '../../../utils/Constants'
 import { useNavigate } from 'react-router-dom'
 
-
 const styleMap = {
   outerBoxStyle: {
     height: '100vh',
@@ -22,10 +21,10 @@ const styleMap = {
 }
 
 const SideNav = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   const [currentPage, setCurrentPage] = useState('')
   const onNavItemClick = (value: string) => {
-    navigate(`/${value}`);
+    navigate(`/${value}`)
     setCurrentPage(window.location.pathname.split('/')[1])
   }
 
@@ -41,13 +40,28 @@ const SideNav = () => {
       <Box sx={{ pl: '7px', pt: '4.5px' }}>
         {NAV_ITEMS.map((item) => {
           return (
+            <>
               <NavItem
                 iconName={item.icon}
                 route={item.route}
                 text={item.text}
                 onNavItemClick={onNavItemClick}
-                active={item.icon == currentPage}
+                active={item.route == currentPage}
               />
+              {item.route == currentPage &&
+                item.nestedItems.length != 0 &&
+                item.nestedItems.map((nestedItem) => {
+                  return (
+                    <NavItem
+                      iconName={'none'}
+                      route={item.route}
+                      text={nestedItem.text}
+                      onNavItemClick={onNavItemClick}
+                      active={true}
+                    />
+                  )
+                })}
+            </>
           )
         })}
       </Box>
