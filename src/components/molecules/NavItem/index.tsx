@@ -22,13 +22,14 @@ interface InputProps {
   iconName: string
   text: string
   onNavItemClick: (value: string) => void
-  active: boolean
+  active: boolean;
+  route:string;
 }
-const NavItem = ({ iconName, text, onNavItemClick, active }: InputProps) => {
+const NavItem = ({ iconName, text, onNavItemClick, active,route }: InputProps) => {
   return (
     <Box
       onClick={() => {
-        onNavItemClick(iconName)
+        onNavItemClick(route)
       }}
       display="flex"
       sx={{

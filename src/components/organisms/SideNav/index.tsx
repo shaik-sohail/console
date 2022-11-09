@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { Box, Typography } from '@mui/material'
 import NavItem from '../../molecules/NavItem'
 import theme from '../../../theme/theme'
-import { NavLink } from 'react-router-dom'
 import { NAV_ITEMS } from '../../../utils/Constants'
+import { useNavigate } from 'react-router-dom'
+
 
 const styleMap = {
   outerBoxStyle: {
@@ -21,8 +22,10 @@ const styleMap = {
 }
 
 const SideNav = () => {
+  const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState('')
   const onNavItemClick = (value: string) => {
+    navigate(`/${value}`);
     setCurrentPage(window.location.pathname.split('/')[1])
   }
 
@@ -38,17 +41,13 @@ const SideNav = () => {
       <Box sx={{ pl: '7px', pt: '4.5px' }}>
         {NAV_ITEMS.map((item) => {
           return (
-            <NavLink
-              to={item.route}
-              style={{ textDecoration: 'none', color: 'black' }}
-            >
               <NavItem
                 iconName={item.icon}
+                route={item.route}
                 text={item.text}
                 onNavItemClick={onNavItemClick}
                 active={item.icon == currentPage}
               />
-            </NavLink>
           )
         })}
       </Box>
