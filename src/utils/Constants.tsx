@@ -7,6 +7,17 @@ import {
   VerifiedUserOutlined,
   SummarizeOutlined,
 } from '@mui/icons-material'
+import { SelectChangeEvent } from '@mui/material'
+
+export interface IMenuItems {
+  content: React.ReactNode
+  id: string
+}
+export interface Iprops {
+  items: IMenuItems[]
+  value: string
+  handleChange: (event: SelectChangeEvent) => void
+}
 
 export interface IconType {
   [key: string]: JSX.Element
