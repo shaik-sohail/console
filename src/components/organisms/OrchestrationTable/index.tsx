@@ -1,12 +1,10 @@
 import React from 'react'
-import CheckBox from '../../Atoms/Checkbox'
-import { Table as MUITable, Typography, Box, IconButton } from '@mui/material'
+import { Table as MUITable, Typography,  } from '@mui/material'
 import TableBody from '@mui/material/TableBody'
 import TableCell from '@mui/material/TableCell'
 import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
-import { KeyboardArrowDown } from '@mui/icons-material'
 import TablePagination from '@mui/material/TablePagination'
 import stableSort from '../../../util/utilityFunction'
 
@@ -80,6 +78,7 @@ const Table = ({
         <MUITable sx={{ border: '1px solid #dddddd' }}>
           <TableHead>
             <TableRow sx={styleMap.rowHead}>
+              {/* Below commented code is to develop dynamic headers for the table */}
               {/* {headers?.map((data) => {
                 if (data.type == 'text') {
                   return (
@@ -140,6 +139,8 @@ const Table = ({
               })}
             </TableRow>
           </TableHead>
+
+          {/* Below code is to render dynamic data into the table */}
           {/* <TableBody>
             {stableSort(rows)
               ?.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)

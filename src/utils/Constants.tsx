@@ -7,6 +7,7 @@ import {
   VerifiedUserOutlined,
   SummarizeOutlined,
 } from '@mui/icons-material'
+import { column } from '../components/organisms/OrchestrationTable'
 
 export interface IMenuItems {
   preText?: string
@@ -99,3 +100,377 @@ export const NAV_ITEMS: NavItemsType[] = [
 ]
 
 export const TRANSUNION_LLC = '©TransUnion LLC.All Rights Reserved.'
+
+export const HEADER_NAMES : [string] = ['Id', 'Description']
+
+export const TABLE_DATA_RESULT = [
+  {
+    _id: 'ResetPassword',
+    _rev: '-1631248348',
+    description: 'Reset Password Tree',
+  },
+  {
+    _id: 'Registration',
+    _rev: '-1380595050',
+    description: 'Platform Registration Tree',
+  },
+  {
+    _id: 'ProgressiveProfile',
+    _rev: '-672542169',
+    description: 'Prompt for missing preferences on 3rd login',
+  },
+  {
+    _id: 'ForgottenUsername',
+    _rev: '459280293',
+    description: 'Forgotten Username Tree',
+  },
+  {
+    _id: 'UpdatePassword',
+    _rev: '2098323263',
+    description: 'Update password using active session',
+  },
+  {
+    _id: 'Login',
+    _rev: '368087022',
+    description: 'Platform Login Tree',
+  },
+]
+export const TABLE_DATA_HEADERS: column[] = [
+  { id: 1, value: '', type: 'checkbox', alignText: 'center' },
+  {
+    id: 2,
+    value: 'Journey Name',
+    type: 'sort',
+    alignText: 'center',
+  },
+  {
+    id: 3,
+    value: 'Description',
+    type: 'text',
+    alignText: 'center',
+  },
+  { id: 4, value: 'Group', type: 'sort', alignText: 'center' },
+  { id: 5, value: 'Status', type: 'sort', alignText: 'center' },
+]
+
+export const TABLE_ROWS_DATA = [
+  {
+    id: 1,
+    isRowSelected: false,
+    values: [
+      {
+        type: 'checkbox',
+        // isChecked: false,
+      },
+      {
+        type: 'text',
+        value: 'Data Desicion',
+        alignText: 'left',
+      },
+      {
+        type: 'text',
+        value:
+          'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+        alignText: 'left',
+      },
+      {
+        type: 'text',
+        value: 'Group 1',
+        alignText: 'center',
+      },
+      {
+        type: 'text',
+        value: 'Active',
+        alignText: 'center',
+      },
+    ],
+  },
+  {
+    id: 2,
+    isRowSelected: false,
+
+    values: [
+      {
+        type: 'checkbox',
+        // isChecked: false,
+      },
+      {
+        type: 'text',
+        value: 'Data Desicion',
+        alignText: 'left',
+      },
+      {
+        type: 'text',
+        value:
+          'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+        alignText: 'left',
+      },
+      {
+        type: 'text',
+        value: 'Group 1',
+        alignText: 'center',
+      },
+      {
+        type: 'text',
+        value: 'Active',
+        alignText: 'center',
+      },
+    ],
+  },
+  {
+    id: 3,
+    isRowSelected: false,
+
+    values: [
+      {
+        type: 'checkbox',
+        // isChecked: false,
+      },
+      {
+        type: 'text',
+        value: 'Data Desicion',
+        alignText: 'left',
+      },
+      {
+        type: 'text',
+        value:
+          'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+        alignText: 'left',
+      },
+      {
+        type: 'text',
+        value: 'Group 1',
+        alignText: 'center',
+      },
+      {
+        type: 'text',
+        value: 'Active',
+        alignText: 'center',
+      },
+    ],
+  },
+  {
+    id: 4,
+    isRowSelected: false,
+
+    values: [
+      {
+        type: 'checkbox',
+        // isChecked: false,
+      },
+      {
+        type: 'text',
+        value: 'Data Desicion',
+        alignText: 'left',
+      },
+      {
+        type: 'text',
+        value:
+          'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+        alignText: 'left',
+      },
+      {
+        type: 'text',
+        value: 'Group 1',
+        alignText: 'center',
+      },
+      {
+        type: 'text',
+        value: 'Active',
+        alignText: 'center',
+      },
+    ],
+  },
+  {
+    id: 5,
+    isRowSelected: false,
+
+    values: [
+      {
+        type: 'checkbox',
+        // isChecked: false,
+      },
+      {
+        type: 'text',
+        value: 'Data Desicion',
+        alignText: 'left',
+      },
+      {
+        type: 'text',
+        value:
+          'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+        alignText: 'left',
+      },
+      {
+        type: 'text',
+        value: 'Group 1',
+        alignText: 'center',
+      },
+      {
+        type: 'text',
+        value: 'Active',
+        alignText: 'center',
+      },
+    ],
+  },
+  {
+    id: 6,
+    isRowSelected: false,
+
+    values: [
+      {
+        type: 'checkbox',
+        // isChecked: false,
+      },
+      {
+        type: 'text',
+        value: 'Data Desicion',
+        alignText: 'left',
+      },
+      {
+        type: 'text',
+        value:
+          'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+        alignText: 'left',
+      },
+      {
+        type: 'text',
+        value: 'Group 1',
+        alignText: 'center',
+      },
+      {
+        type: 'text',
+        value: 'Active',
+        alignText: 'center',
+      },
+    ],
+  },
+  {
+    id: 7,
+    isRowSelected: false,
+
+    values: [
+      {
+        type: 'checkbox',
+        // isChecked: false,
+      },
+      {
+        type: 'text',
+        value: 'Data Desicion',
+        alignText: 'left',
+      },
+      {
+        type: 'text',
+        value:
+          'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+        alignText: 'left',
+      },
+      {
+        type: 'text',
+        value: 'Group 1',
+        alignText: 'center',
+      },
+      {
+        type: 'text',
+        value: 'Active',
+        alignText: 'center',
+      },
+    ],
+  },
+  {
+    id: 8,
+    isRowSelected: false,
+
+    values: [
+      {
+        type: 'checkbox',
+        // isChecked: false,
+      },
+      {
+        type: 'text',
+        value: 'Data',
+        alignText: 'left',
+      },
+      {
+        type: 'text',
+        value:
+          'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+        alignText: 'left',
+      },
+      {
+        type: 'text',
+        value: 'Group 1',
+        alignText: 'center',
+      },
+      {
+        type: 'text',
+        value: 'Active',
+        alignText: 'center',
+      },
+    ],
+  },
+  {
+    id: 9,
+    isRowSelected: false,
+
+    values: [
+      {
+        type: 'checkbox',
+        // isChecked: false        // isChecked: false,
+      },
+      {
+        type: 'text',
+        value: 'Data',
+        alignText: 'left',
+      },
+      {
+        type: 'text',
+        value:
+          'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+        alignText: 'left',
+      },
+      {
+        type: 'text',
+        value: 'Group 1',
+        alignText: 'center',
+      },
+      {
+        type: 'text',
+        value: 'Active',
+        alignText: 'center',
+      },
+    ],
+  },
+  {
+    id: 10,
+    isRowSelected: false,
+
+    values: [
+      {
+        type: 'checkbox',
+        // isChecked: false,
+      },
+      {
+        type: 'text',
+        value: 'Data Breach',
+        alignText: 'left',
+      },
+      {
+        type: 'text',
+        value:
+          'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+        alignText: 'left',
+      },
+      {
+        type: 'text',
+        value: 'Group 2',
+        alignText: 'center',
+      },
+      {
+        type: 'text',
+        value: 'Active',
+        alignText: 'center',
+      },
+    ],
+  },
+]
