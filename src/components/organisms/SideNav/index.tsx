@@ -19,18 +19,18 @@ const styleMap = {
     color: theme.palette.secondary.main,
   },
 }
-interface InputProps{
-  navItems?:NavItemsType[];
+interface InputProps {
+  navItems?: NavItemsType[]
 }
-const SideNav = ({navItems}:InputProps) => {
-  const navigate = useNavigate();
-  const [navItemsList, setNavItemsList] = useState(navItems);
+const SideNav = ({ navItems }: InputProps) => {
+  const navigate = useNavigate()
+  const [navItemsList, setNavItemsList] = useState(navItems)
   const [currentPage, setCurrentPage] = useState('')
-  useEffect(()=>{
-    if(navItems==undefined){
-      setNavItemsList(NAV_ITEMS);
+  useEffect(() => {
+    if (navItems == undefined) {
+      setNavItemsList(NAV_ITEMS)
     }
-  },[])
+  }, [])
   const onNavItemClick = (value: string) => {
     navigate(`/${value}`)
     setCurrentPage(window.location.pathname.split('/')[1])
@@ -46,32 +46,34 @@ const SideNav = ({navItems}:InputProps) => {
         <Typography variant="h4">TruValidate</Typography>
       </Box>
       <Box sx={{ pl: '7px', pt: '4.5px' }}>
-        {navItemsList&&navItemsList.map((item) => {
-          return (
-            <>
-              <NavItem
-                iconName={item.icon}
-                route={item.route}
-                text={item.text}
-                onNavItemClick={onNavItemClick}
-                active={item.route == currentPage}
-              />
-              {item.route == currentPage &&
-                item.nestedItems.length != 0 &&
-                item.nestedItems.map((nestedItem) => {
-                  return (
-                    <NavItem
-                      iconName={'none'}
-                      route={`${item.route}/${nestedItem.route}`}
-                      text={nestedItem.text}
-                      onNavItemClick={onNavItemClick}
-                      active={true}
-                    />
-                  )
-                })}
-            </>
-          )
-        })}
+        {navItemsList &&
+          navItemsList.map((item) => {
+            return (
+              <>
+                <NavItem
+                  iconName={item.icon}
+                  route={item.route}
+                  text={item.text}
+                  onNavItemClick={onNavItemClick}
+                  active={item.route == currentPage}
+                />
+                {item.route == currentPage &&
+                  item.nestedItems &&
+                  item.nestedItems.length != 0 &&
+                  item.nestedItems.map((nestedItem) => {
+                    return (
+                      <NavItem
+                        iconName={'none'}
+                        route={`${item.route}/${nestedItem.route}`}
+                        text={nestedItem.text}
+                        onNavItemClick={onNavItemClick}
+                        active={true}
+                      />
+                    )
+                  })}
+              </>
+            )
+          })}
       </Box>
     </Box>
   )

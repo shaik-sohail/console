@@ -44,7 +44,7 @@ const App = () => {
   }, [])
   return (
     <BrowserRouter>
-      {/* <SideNav navItems={NAV_ITEMS}/> */}
+      <SideNav navItems={NAV_ITEMS}/>
       <Table
         headers={tableData?.headers}
         rows={tableData?.rows}

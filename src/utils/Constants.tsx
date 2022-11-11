@@ -22,17 +22,12 @@ export const ICONS: IconType = {
 }
 
 export interface NavItemsType{
-  icon:string;
-  text:string;
-  route:string;
-  nestedItems:NestedNavItemsType[];
-}
-
-export interface NestedNavItemsType{
   icon?:string;
   text:string;
   route:string;
+  nestedItems?:NavItemsType[];
 }
+
 export const NAV_ITEMS :NavItemsType[]= [
   {
     icon: 'home',

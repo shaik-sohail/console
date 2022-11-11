@@ -19,7 +19,7 @@ const styleMap = {
   },
 }
 interface InputProps {
-  iconName: string
+  iconName?: string
   text: string
   onNavItemClick: (value: string) => void
   active: boolean
@@ -46,11 +46,11 @@ const NavItem = ({
       }}
     >
       <Box sx={{ pl: '9px' }}>
-        <Icon
+        {iconName&&<Icon
           icon={ICONS[iconName]}
           fontSize="small"
           sx={{ color: !active ? theme.palette.secondary.main : 'none' }}
-        />
+        />}
       </Box>
       <Box sx={{ pl: '12px' }}>
         <Typography>{text}</Typography>
