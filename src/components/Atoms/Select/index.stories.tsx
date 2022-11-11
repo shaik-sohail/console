@@ -4,7 +4,7 @@ import Select from '.'
 import { Divider, Grid, Typography } from '@mui/material'
 
 export default {
-  title: 'Atoms/SearchField',
+  title: 'Atoms/Select',
   component: Select,
   argTypes: {},
 } as ComponentMeta<typeof Select>
@@ -28,7 +28,7 @@ function MItem() {
           sx={{ border: '1px solid grey' }}
         />
         <Grid item>
-          <Typography>Zemoso</Typography>
+          <Typography>Softility</Typography>
         </Grid>
       </Grid>
     </Grid>
@@ -37,5 +37,7 @@ function MItem() {
 export const PrimarySelect = Template.bind({})
 PrimarySelect.args = {
   value: '1',
+  selectVariant: 'outlined',
+  formSize: 'medium',
   items: [{ id: '1', content: <MItem /> }],
 }

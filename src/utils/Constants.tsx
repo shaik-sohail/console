@@ -13,9 +13,11 @@ export interface IMenuItems {
   content: React.ReactNode
   id: string
 }
-export interface Iprops {
+export interface CustomSelectProps {
   items: IMenuItems[]
   value: string
+  selectVariant: 'filled' | 'outlined' | 'standard'
+  formSize: 'medium' | 'small'
   handleChange: (event: SelectChangeEvent) => void
 }
 
