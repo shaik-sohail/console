@@ -7,6 +7,19 @@ import {
   VerifiedUserOutlined,
   SummarizeOutlined,
 } from '@mui/icons-material'
+import { SelectChangeEvent } from '@mui/material'
+
+export interface IMenuItems {
+  content: React.ReactNode
+  id: string
+}
+export interface CustomSelectProps {
+  items: IMenuItems[]
+  value: string
+  selectVariant: 'filled' | 'outlined' | 'standard'
+  formSize: 'medium' | 'small'
+  handleChange: (event: SelectChangeEvent) => void
+}
 
 export interface IconType {
   [key: string]: JSX.Element
