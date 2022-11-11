@@ -21,7 +21,19 @@ export const ICONS: IconType = {
   reports: <SummarizeOutlined />,
 }
 
-export const NAV_ITEMS = [
+export interface NavItemsType{
+  icon:string;
+  text:string;
+  route:string;
+  nestedItems:NestedNavItemsType[];
+}
+
+export interface NestedNavItemsType{
+  icon?:string;
+  text:string;
+  route:string;
+}
+export const NAV_ITEMS :NavItemsType[]= [
   {
     icon: 'home',
     text: 'Home',
@@ -45,9 +57,9 @@ export const NAV_ITEMS = [
     text: 'Access Management',
     route: 'accessManagement',
     nestedItems: [
-      { text: 'Roles' },
-      { text: 'Users' },
-      { text: 'Client Mapping' },
+      { text: 'Roles', route: 'roles' },
+      { text: 'Users', route: 'users' },
+      { text: 'Client Mapping', route: 'clientMapping' },
     ],
   },
   {
@@ -55,14 +67,14 @@ export const NAV_ITEMS = [
     text: 'Orchesstration',
     route: 'orchesstration',
     nestedItems: [
-      { text: 'Lists' },
-      { text: 'Rules' },
-      { text: 'Rules Groups' },
-      { text: 'Rules Sets' },
-      { text: 'Integration Points' },
-      { text: 'Publish' },
-      { text: 'Rules - Old' },
-      { text: 'Alerts' },
+      { text: 'Lists', route: 'lists' },
+      { text: 'Rules', route: 'rules' },
+      { text: 'Rules Groups', route: 'rulesGroups' },
+      { text: 'Rules Sets', route: 'rulesSets' },
+      { text: 'Integration Points', route: 'integrationPoints' },
+      { text: 'Publish', route: 'publish' },
+      { text: 'Rules - Old', route: 'rulesOld' },
+      { text: 'Alerts', route: 'alerts' },
     ],
   },
   {

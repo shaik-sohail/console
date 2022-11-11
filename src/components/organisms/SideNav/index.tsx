@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Box, Typography } from '@mui/material'
 import NavItem from '../../molecules/NavItem'
 import theme from '../../../theme/theme'
-import { NAV_ITEMS } from '../../../utils/Constants'
+import { NavItemsType, NAV_ITEMS } from '../../../utils/Constants'
 import { useNavigate } from 'react-router-dom'
 
 const styleMap = {
@@ -19,10 +19,18 @@ const styleMap = {
     color: theme.palette.secondary.main,
   },
 }
-
-const SideNav = () => {
-  const navigate = useNavigate()
+interface InputProps{
+  navItems?:NavItemsType[];
+}
+const SideNav = ({navItems}:InputProps) => {
+  const navigate = useNavigate();
+  const [navItemsList, setNavItemsList] = useState(navItems);
   const [currentPage, setCurrentPage] = useState('')
+  useEffect(()=>{
+    if(navItems==undefined){
+      setNavItemsList(NAV_ITEMS);
+    }
+  },[])
   const onNavItemClick = (value: string) => {
     navigate(`/${value}`)
     setCurrentPage(window.location.pathname.split('/')[1])
@@ -38,7 +46,7 @@ const SideNav = () => {
         <Typography variant="h4">TruValidate</Typography>
       </Box>
       <Box sx={{ pl: '7px', pt: '4.5px' }}>
-        {NAV_ITEMS.map((item) => {
+        {navItemsList&&navItemsList.map((item) => {
           return (
             <>
               <NavItem
@@ -54,7 +62,7 @@ const SideNav = () => {
                   return (
                     <NavItem
                       iconName={'none'}
-                      route={item.route}
+                      route={`${item.route}/${nestedItem.route}`}
                       text={nestedItem.text}
                       onNavItemClick={onNavItemClick}
                       active={true}

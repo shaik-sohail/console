@@ -63,9 +63,25 @@ export default {
 
 const Template: ComponentStory<typeof NavItem> = (args) => <NavItem {...args} />
 
-export const navItem = Template.bind({})
+export const PrimaryNavItem = Template.bind({})
 
-navItem.args = {
+PrimaryNavItem.args = {
+  iconName: 'home',
+  text: 'Home',
+  active: false,
+  route: 'home',
+  onNavItemClick: () => {
+    console.log('Click')
+  },
+}
+
+export const ActiveNavItem = Template.bind({})
+
+ActiveNavItem.args = {
+  iconName: 'home',
+  text: 'Home',
+  active: true,
+  route: 'home',
   onNavItemClick: () => {
     console.log('Click')
   },
