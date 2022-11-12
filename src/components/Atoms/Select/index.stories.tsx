@@ -15,29 +15,10 @@ const Template: ComponentStory<typeof Select> = (args) => (
   </div>
 )
 
-function MItem() {
-  return (
-    <Grid container sx={{ width: '150px' }}>
-      <Grid item container justifyContent={'space-between'}>
-        <Grid item>
-          <Typography>Sohail</Typography>
-        </Grid>
-        <Divider
-          orientation="vertical"
-          flexItem
-          sx={{ border: '1px solid grey' }}
-        />
-        <Grid item>
-          <Typography>Softility</Typography>
-        </Grid>
-      </Grid>
-    </Grid>
-  )
-}
 export const PrimarySelect = Template.bind({})
 PrimarySelect.args = {
   value: '1',
-  selectVariant: 'outlined',
-  formSize: 'medium',
-  items: [{ id: '1', content: <MItem /> }],
+  variant: 'outlined',
+  formSize: 'small',
+  items: [{ id: '1', preText: 'sohail', postText: 'softility' }],
 }
