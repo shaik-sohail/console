@@ -31,14 +31,16 @@ export const ICONS: IconType = {
   reports: <SummarizeOutlined />,
 }
 
-export interface NavItemsType{
-  icon?:string;
-  text:string;
-  route:string;
-  nestedItems?:NavItemsType[];
+export interface NavItemsType {
+  icon?: string
+  text: string
+  route: string
+  nestedItems?: NavItemsType[]
 }
 
-export const NAV_ITEMS :NavItemsType[]= [
+export const MenuItems = [{ id: '1', preText: 'sohail', postText: 'softility' }]
+
+export const NAV_ITEMS: NavItemsType[] = [
   {
     icon: 'home',
     text: 'Home',
