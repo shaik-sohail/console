@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom'
 import SideNav from './components/organisms/SideNav'
 import axios from 'axios'
 import Table, { column, row } from './components/organisms/OrchestrationTable'
+import { NAV_ITEMS } from './utils/Constants'
 
 const App = () => {
   const [tableData, setTableData] = useState<{
@@ -43,7 +44,7 @@ const App = () => {
   }, [])
   return (
     <BrowserRouter>
-      {/* <SideNav/> */}
+      <SideNav navItems={NAV_ITEMS}/>
       <Table
         headers={tableData?.headers}
         rows={tableData?.rows}
