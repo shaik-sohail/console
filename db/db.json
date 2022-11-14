@@ -327,6 +327,50 @@
           }
         ]
       }
-    ]
+    ],
+   "header_names": [
+      "Id","Description"
+    ],
+
+    "result": [
+      {
+        "_id": "ResetPassword",
+        "_rev": "-1631248348",
+        "description": "Reset Password Tree"
+      },
+      {
+        "_id": "Registration",
+        "_rev": "-1380595050",
+        "description": "Platform Registration Tree"
+      },
+      {
+        "_id": "ProgressiveProfile",
+        "_rev": "-672542169",
+        "description": "Prompt for missing preferences on 3rd login"
+      },
+      {
+        "_id": "ForgottenUsername",
+        "_rev": "459280293",
+        "description": "Forgotten Username Tree"
+      },
+      {
+        "_id": "UpdatePassword",
+        "_rev": "2098323263",
+        "description": "Update password using active session"
+      },
+      {
+        "_id": "Login",
+        "_rev": "368087022",
+        "description": "Platform Login Tree"
+      }
+    ],
+    "meta_data" : { 
+    "resultCount": 6,
+    "pagedResultsCookie": null,
+    "totalPagedResultsPolicy": "NONE",
+    "totalPagedResults": -1,
+    "remainingPagedResults": -1
   }
 }
+}
+
