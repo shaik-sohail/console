@@ -12,19 +12,19 @@ import stableSort from '../../../util/utilityFunction'
 
 const styleMap = {
   tableCellWithText: {
-    fontSize: '12px',
+    fontSize: '14px',
   },
   tableHeaderCell: {
     fontWeight: 'bold',
-    fontSize: '14px',
+    fontSize: '16px',
   },
   cellHead: {
-    padding: '0px 10px 0px 8px',
+    padding: '4px 12px 4px 12px',
     borderLeft: '1px solid #dfdfdf',
     borderRight: '1.5px solid #dfdfdf',
   },
   cellRow: {
-    padding: '5px 10px 5px 8px',
+    padding: '10px 12px 10px 12px',
     borderLeft: '1px solid #dfdfdf',
     borderRight: '1.5px solid #dfdfdf',
   },
@@ -47,13 +47,22 @@ export interface row {
 interface ITableProps {
   headers?: column[]
   rows?: row[]
+  header_names?: [string]
+  result?: row[]
   handleCheckBox?: (id: number) => void
   rowsLength: number
 }
 
-const Table = ({ headers, rows, handleCheckBox, rowsLength }: ITableProps) => {
+const Table = ({
+  headers,
+  rows,
+  handleCheckBox,
+  rowsLength,
+  result,
+  header_names,
+}: ITableProps) => {
   const [page, setPage] = React.useState(0)
-  const [rowsPerPage, setRowsPerPage] = React.useState(5)
+  const [rowsPerPage, setRowsPerPage] = React.useState(4)
   const handleChangePage = (event: unknown, newPage: number) => {
     setPage(newPage)
   }
@@ -64,14 +73,14 @@ const Table = ({ headers, rows, handleCheckBox, rowsLength }: ITableProps) => {
     setRowsPerPage(parseInt(event.target.value, 10))
     setPage(0)
   }
- 
+
   return (
-    <div style={{ border: '1px solid #dddddd' }}>
-      <TableContainer>
+    <div style={{ border: '1px solid #dddddd', maxWidth: '80%' }}>
+      <TableContainer sx={{ width: '100%' }}>
         <MUITable sx={{ border: '1px solid #dddddd' }}>
           <TableHead>
             <TableRow sx={styleMap.rowHead}>
-              {headers?.map((data) => {
+              {/* {headers?.map((data) => {
                 if (data.type == 'text') {
                   return (
                     <TableCell align={data.alignText} sx={styleMap.cellHead}>
@@ -115,10 +124,23 @@ const Table = ({ headers, rows, handleCheckBox, rowsLength }: ITableProps) => {
                     </TableCell>
                   )
                 }
+              })} */}
+              <TableCell width={4} align="center" sx={styleMap.cellHead}>
+                <Typography sx={styleMap.tableHeaderCell}>S.no</Typography>
+              </TableCell>
+
+              {header_names?.map((header) => {
+                return (
+                  <TableCell align="left" sx={styleMap.cellHead}>
+                    <Typography sx={styleMap.tableHeaderCell}>
+                      {header}
+                    </Typography>
+                  </TableCell>
+                )
               })}
             </TableRow>
           </TableHead>
-          <TableBody>
+          {/* <TableBody>
             {stableSort(rows)
               ?.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map?.((data: any) => {
@@ -164,11 +186,50 @@ const Table = ({ headers, rows, handleCheckBox, rowsLength }: ITableProps) => {
                   </TableRow>
                 )
               })}
+          </TableBody> */}
+
+          <TableBody>
+            {stableSort(result)
+              ?.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+              .map?.((data: any) => {
+                // {rows?.map((data) => {
+                return (
+                  <TableRow
+                    key={data._rev}
+                    sx={{
+                      borderBottom: '1px solid #eeeeee',
+                      backgroundColor: data.isRowSelected && '#d2d2d2',
+                      '&:hover': {
+                        backgroundColor: data.isRowSelected
+                          ? '#d2d2d2'
+                          : ' #ebebeb;',
+                      },
+                    }}
+                  >
+                    <TableCell align="center" sx={styleMap.cellRow}>
+                      <Typography sx={styleMap.tableCellWithText}>
+                        {result?.indexOf(data) + 1}
+                      </Typography>
+                    </TableCell>
+                    <TableCell align="left" sx={styleMap.cellRow}>
+                      <Typography sx={styleMap.tableCellWithText}>
+                        {data._id}
+                      </Typography>
+                    </TableCell>
+
+                    <TableCell align="left" sx={styleMap.cellRow}>
+                      <Typography sx={styleMap.tableCellWithText}>
+                        {data.description}
+                      </Typography>
+                    </TableCell>
+                  </TableRow>
+                )
+              })}
           </TableBody>
         </MUITable>
       </TableContainer>
       <TablePagination
-        rowsPerPageOptions={[5, 10, 25]}
+        rowsPerPageOptions={[4, 10, 15]}
         component="div"
         count={rowsLength}
         rowsPerPage={rowsPerPage}
