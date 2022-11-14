@@ -8,6 +8,16 @@ import {
   SummarizeOutlined,
 } from '@mui/icons-material'
 
+export interface IMenuItems {
+  preText?: string
+  postText?: string
+  id: string
+}
+export interface CustomSelectProps {
+  items: IMenuItems[]
+  formSize: 'medium' | 'small'
+}
+
 export interface IconType {
   [key: string]: JSX.Element
 }
