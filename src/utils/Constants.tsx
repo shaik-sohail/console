@@ -78,3 +78,5 @@ export const NAV_ITEMS = [
     nestedItems: [],
   },
 ]
+
+export const TRANSUNION_LLC='©TransUnion LLC.All Rights Reserved.'

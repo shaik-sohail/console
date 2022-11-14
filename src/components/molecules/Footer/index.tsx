@@ -1,6 +1,8 @@
 import React from 'react'
 import { Box, Typography } from '@mui/material'
 import theme from '../../../theme/theme'
+import { NavLink } from 'react-router-dom'
+import { TRANSUNION_LLC } from '../../../utils/Constants'
 
 const styleMap = {
   outerBoxStyle: {
@@ -16,6 +18,12 @@ const styleMap = {
     justifyContent: 'right',
     pr: '70px',
   },
+  linkStyle: {
+    textDecoration: 'none',
+    color: theme.palette.grey.main,
+    paddingLeft: '15px',
+    paddingRight: '15px',
+  },
 }
 
 const Footer = () => {
@@ -27,12 +35,26 @@ const Footer = () => {
     >
       <Box sx={{ pt: '40px' }}>
         <Typography sx={{ ...styleMap.typographyStyle }}>
-          ©TransUnion LLC.All Rights Reserved.
+          {TRANSUNION_LLC}{' '}
         </Typography>
       </Box>
       <Box>
         <Typography sx={{ ...styleMap.typographyStyle }}>
-          TransUnion.com | Privacy Policy | Terms of Us
+          <NavLink to="/" style={{ ...styleMap.linkStyle }}>
+            TransUnion.com
+          </NavLink>
+          |
+          <NavLink to="/privacyPolicy" style={{ ...styleMap.linkStyle }}>
+            {' '}
+            Privacy Policy{' '}
+          </NavLink>
+          |
+          <NavLink
+            to="/terms"
+            style={{ ...styleMap.linkStyle, paddingRight: '0px' }}
+          >
+            Terms of Us
+          </NavLink>
         </Typography>
       </Box>
     </Box>
