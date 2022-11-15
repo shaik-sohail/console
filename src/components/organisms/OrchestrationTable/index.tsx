@@ -6,7 +6,7 @@ import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
 import TablePagination from '@mui/material/TablePagination'
-import stableSort from '../../../util/utilityFunction'
+import stableSort from '../../../utils/utilityFunction'
 
 const styleMap = {
   tableCellWithText: {

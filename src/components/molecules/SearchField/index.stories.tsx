@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import SearchField from '.'
 
 export default {
-  title: 'Molecule/SearchField',
+  title: 'molecules/SearchField',
   component: SearchField,
   argTypes: {},
 } as ComponentMeta<typeof SearchField>
