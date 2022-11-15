@@ -95,3 +95,5 @@ export const NAV_ITEMS :NavItemsType[]= [
     nestedItems: [],
   },
 ]
+
+export const TRANSUNION_LLC='©TransUnion LLC.All Rights Reserved.'
