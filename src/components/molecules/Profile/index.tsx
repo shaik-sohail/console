@@ -1,9 +1,14 @@
 import React from 'react'
 import { Box, Grid, styled } from '@mui/material'
-import PermIdentityIcon from '@mui/icons-material/PermIdentity'
 import Icon from '../../Atoms/Icon'
 import CustomSelect from '../../Atoms/Select'
-import { MenuItems } from '../../../utils/Constants'
+import { IMenuItems } from '../../../utils/Constants'
+
+interface ProfileProps {
+  icon: JSX.Element
+  menuItems: IMenuItems[]
+}
+
 const CustomBox = styled(Box)({
   backgroundColor: 'grey',
 })
@@ -23,7 +28,9 @@ const IconDiv = styled('div')({
   width: '100%',
   height: '40px',
 })
-const Profile: React.FC = () => {
+
+const Profile: React.FC<ProfileProps> = (props) => {
+  const { icon, menuItems } = props
   return (
     <div>
       <CustomBox>
@@ -38,12 +45,12 @@ const Profile: React.FC = () => {
             }}
           >
             <IconDiv>
-              <Icon icon={<PermIdentityIcon />} />
+              <Icon icon={icon} />
             </IconDiv>
           </Grid>
           <Grid item xs={10}>
             <CustomDiv>
-              <CustomSelect formSize="small" value="1" items={MenuItems} />
+              <CustomSelect formSize="small" value="1" items={menuItems} />
             </CustomDiv>
           </Grid>
         </Grid>

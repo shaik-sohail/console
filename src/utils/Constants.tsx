@@ -15,7 +15,7 @@ export interface IMenuItems {
 }
 export interface CustomSelectProps {
   items: IMenuItems[]
-  formSize: 'medium' | 'small'
+  formSize?: 'medium' | 'small'
 }
 
 export interface IconType {
