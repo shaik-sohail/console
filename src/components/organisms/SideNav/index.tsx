@@ -8,8 +8,9 @@ import { useNavigate } from 'react-router-dom'
 const styleMap = {
   outerBoxStyle: {
     height: '100vh',
-    maxWidth: '260px',
+    width: '260px',
     backgroundColor: theme.palette.primary.main,
+    overflowY:'hidden'
   },
   headerBoxStyle: {
     borderBottom: `1px solid ${theme.palette.secondary.main}`,
@@ -45,7 +46,7 @@ const SideNav = ({ navItems }: InputProps) => {
       >
         <Typography variant="h4">TruValidate</Typography>
       </Box>
-      <Box sx={{ pl: '7px', pt: '4.5px' }}>
+      <Box sx={{ pl: '7px', pt: '4.5px',pr:'1px' }}>
         {navItemsList &&
           navItemsList.map((item) => {
             return (

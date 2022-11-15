@@ -8,7 +8,7 @@ const styleMap = {
   outerBoxStyle: {
     borderTop: `1px solid ${theme.palette.primary.main}`,
     justifyContent: 'right',
-    height: '100px',
+    height: '120px',
     color: theme.palette.grey.main,
   },
   typographyStyle: {
