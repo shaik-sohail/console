@@ -98,4 +98,4 @@ export const NAV_ITEMS: NavItemsType[] = [
   },
 ]
 
-export const TRANSUNION_LLC='©TransUnion LLC.All Rights Reserved.'
+export const TRANSUNION_LLC = '©TransUnion LLC.All Rights Reserved.'
