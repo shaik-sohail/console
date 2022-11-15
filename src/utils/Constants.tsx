@@ -101,7 +101,7 @@ export const NAV_ITEMS: NavItemsType[] = [
 
 export const TRANSUNION_LLC = '©TransUnion LLC.All Rights Reserved.'
 
-export const HEADER_NAMES : [string] = ['Id', 'Description']
+export const HEADER_NAMES : string[] = ['Id', 'Description']
 
 export const TABLE_DATA_RESULT = [
   {

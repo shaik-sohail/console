@@ -38,7 +38,7 @@ const bgColor = {
 const Header: React.FC<CustomHeaderProps> = (props) => {
   const { title, badgeContent, icon, menuItems } = props
   return (
-    <Grid container sx={center}>
+    <Grid container sx={center} px={4}>
       <Grid item xs={6}>
         <Typography variant="h1" fontSize="24px" color="grey">
           {title}

@@ -12,7 +12,8 @@ interface Iprops {
 }
 
 const CustomSearchField = styled(OutlinedInput)(() => ({
-  height: '25px',
+  height: '34px',
+  width : "500px"
 }))
 
 const CustomizedInputBase: React.FC<Iprops> = (props) => {
@@ -20,6 +21,7 @@ const CustomizedInputBase: React.FC<Iprops> = (props) => {
     <Box component="form" noValidate autoComplete="off">
       <FormControl>
         <CustomSearchField
+        
           placeholder={props.placeholder}
           onChange={props.onChange}
           value={props.inputValue}

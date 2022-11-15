@@ -45,7 +45,7 @@ export interface row {
 interface ITableProps {
   headers?: column[]
   rows?: row[]
-  header_names?: [string]
+  header_names?: string[]
   result?: row[]
   handleCheckBox?: (id: number) => void
   rowsLength: number
