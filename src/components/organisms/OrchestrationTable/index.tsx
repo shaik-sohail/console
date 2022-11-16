@@ -1,5 +1,5 @@
 import React from 'react'
-import { Table as MUITable, Typography,  } from '@mui/material'
+import { Box, IconButton, Table as MUITable, Typography,  } from '@mui/material'
 import TableBody from '@mui/material/TableBody'
 import TableCell from '@mui/material/TableCell'
 import TableContainer from '@mui/material/TableContainer'
@@ -7,6 +7,8 @@ import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
 import TablePagination from '@mui/material/TablePagination'
 import stableSort from '../../../utils/utilityFunction'
+import CheckBox from '../../Atoms/Checkbox'
+import { KeyboardArrowDown } from '@mui/icons-material'
 
 const styleMap = {
   tableCellWithText: {
@@ -60,7 +62,7 @@ const Table = ({
   header_names,
 }: ITableProps) => {
   const [page, setPage] = React.useState(0)
-  const [rowsPerPage, setRowsPerPage] = React.useState(4)
+  const [rowsPerPage, setRowsPerPage] = React.useState(5)
   const handleChangePage = (event: unknown, newPage: number) => {
     setPage(newPage)
   }
@@ -73,13 +75,13 @@ const Table = ({
   }
 
   return (
-    <div style={{ border: '1px solid #dddddd', maxWidth: '80%' }}>
+    <div style={{ border: '1px solid #dddddd' }}>
       <TableContainer sx={{ width: '100%' }}>
         <MUITable sx={{ border: '1px solid #dddddd' }}>
           <TableHead>
             <TableRow sx={styleMap.rowHead}>
               {/* Below commented code is to develop dynamic headers for the table */}
-              {/* {headers?.map((data) => {
+              {headers?.map((data) => {
                 if (data.type == 'text') {
                   return (
                     <TableCell align={data.alignText} sx={styleMap.cellHead}>
@@ -123,8 +125,8 @@ const Table = ({
                     </TableCell>
                   )
                 }
-              })} */}
-              <TableCell width={4} align="center" sx={styleMap.cellHead}>
+              })}
+              {/* <TableCell width={4} align="center" sx={styleMap.cellHead}>
                 <Typography sx={styleMap.tableHeaderCell}>S.no</Typography>
               </TableCell>
 
@@ -136,12 +138,12 @@ const Table = ({
                     </Typography>
                   </TableCell>
                 )
-              })}
+              })} */}
             </TableRow>
           </TableHead>
 
           {/* Below code is to render dynamic data into the table */}
-          {/* <TableBody>
+          <TableBody>
             {stableSort(rows)
               ?.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map?.((data: any) => {
@@ -187,9 +189,9 @@ const Table = ({
                   </TableRow>
                 )
               })}
-          </TableBody> */}
+          </TableBody>
 
-          <TableBody>
+          {/* <TableBody>
             {stableSort(result)
               ?.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map?.((data: any) => {
@@ -226,11 +228,11 @@ const Table = ({
                   </TableRow>
                 )
               })}
-          </TableBody>
+          </TableBody> */}
         </MUITable>
       </TableContainer>
       <TablePagination
-        rowsPerPageOptions={[4, 10, 15]}
+        rowsPerPageOptions={[5, 10, 15]}
         component="div"
         count={rowsLength}
         rowsPerPage={rowsPerPage}

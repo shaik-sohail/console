@@ -18,6 +18,8 @@ const Template: ComponentStory<typeof Table> = (args) => <Table {...args} />
 export const table = Template.bind({})
 
 table.args = {
+  headers : TABLE_DATA_HEADERS,
+  rows : TABLE_ROWS_DATA,
   header_names :HEADER_NAMES,
   result : TABLE_DATA_RESULT,
   rowsLength : TABLE_DATA_RESULT.length

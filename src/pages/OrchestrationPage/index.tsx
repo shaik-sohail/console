@@ -84,7 +84,7 @@ const MainContent = () => {
   }, [])
 
   return (
-    <Box sx={{marginBottom : "10px"}}>
+    <Box sx={{marginBottom : "20px"}}>
       <Box
         sx={{
           borderBottom: '1px solid #eff0f3',
